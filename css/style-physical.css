@@ -1,0 +1,180 @@
+/* .title (selector){ 
+    color(propiedad): aqua(valor);
+} */
+/* .title, .name (selectores){
+    color: aqua;
+    font-size(n propiedades): 15px;
+} */
+/*width: 50vw; vw: area visible del navegdor, osea que se encaje y se que asi mientras que la pagina sea de diferentes formas.*/
+
+@font-face{/*para guardar o poner fonts personalisadas*/
+    font-family:Charter;
+    src:url(fonts/charter-regular.otf);
+    font-style:normal;
+    font-weight:400;/*de 100 a 300 delgado, 400 a 600 normal y 700 a mas bold*/
+}
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-italic.otf);
+    font-style:italic;
+    font-weight:400;
+}
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-bold.otf);
+    font-style:normal;
+    font-weight:bold;
+} 
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-bold-italic.otf);
+    font-style:italic;
+    font-weight:bold;
+}     
+:root{/*elemento raíz de un árbol que representa el documento. En HTML y tambien guardar elementos y re usarlos.*/
+   
+    --gray30: #212121;
+    --gray20: #212429;
+    --gray10: #616161;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--gray30);
+    font-family: 'Poppins', sans-serif;
+    /* font-family:Charter;  */
+    margin: 0;
+}
+a{
+    color:var(--gray10) ;
+}
+header{
+    font-size: 14px;
+    width: 188px;
+    color: var(--gray10);
+    position: absolute;
+    top: 20px;
+    left: -232px;
+    /* right: 0px; */
+    /* bottom: 0; */
+    z-index: 1;
+    /*top left bottom right z-index:como un atras o adelante*/
+}
+nav details summary{
+    font-weight: bold;
+    line-height: 24px;
+}
+header li{
+    margin-bottom: 16px;
+    line-height: 24px;
+}
+header a{
+    text-decoration: none;
+}
+header a:hover {
+    color: var(--gray30);
+}
+header h2{
+    font-size: 14px;
+}
+h1{
+    font-size: 56px;
+    font-weight: normal;
+    margin: 64px 10px 16px 0px;/*top right/left bottom , pero el original es top right bottom left */
+    /* border: 1px solid red;   */
+    /* box-shadow:inset 0 0 0 5px #FEC62E; inset es que la sombra este dentro.*/
+}
+h1 + p{
+    margin-bottom: 64px;
+}
+hr{
+    color: var(--gray10);
+    
+}
+h2{
+    font-size: 32px;
+    margin: 64px 0px 16px;
+    font-weight: normal;
+}
+h3{
+    font-size: 24px;
+    margin: 16px 0px 24px;
+    position: relative;
+    top: 0px;
+    background: white;
+}
+pre{
+    background-color: #FEC62E;
+    padding: 40px;
+}
+blockquote{
+    font-size: 24px;
+    margin: 32px 0px;  
+    padding-left: 16px;
+    line-height: 24px;
+    /* border: 1px solid red; */
+    border-left: 4px solid var(--gray30);
+}
+blockquote span{
+    color:var(--gray10);
+}
+blockquote span::before{
+    content: "-";
+}
+header h2{
+    margin: auto;
+}
+.header{
+    position: sticky;
+    top: 0;
+}
+.header-content{
+    position: relative;
+}
+.wrapper{
+    width: 902px;
+    margin: auto;
+}
+.main-content{
+    background:white;
+    /* padding: 20px; */
+}
+.hero{/*aca para que la caja de esta imagen salga es darle propiedad height o width*/
+    background-image: linear-gradient(to top, rgb(255, 255, 255, .2), transparent), url('../img/pattern.png');
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; hace que se expanda a imagen para que no pierda la proporcion */
+    height: 350px;
+}
+
+.section_setup{
+    counter-reset: titlelist;/*esta propiedad le da un numerado a tu lista que quieras enumarar numero, n.romanos, etc. Pero tiene un limite cuando hay un div, section, header, article, etc.*/
+    position: relative;
+}
+.section_setup img{
+    margin-top: 40px;
+}
+.section_setup h3{
+    counter-increment: titlelist;
+    padding-bottom: 8px;
+}
+.section_setup h3::before/*pseudo-clase que pone un elemento antes (en este caso despues de h1)en html*/{
+    content: counter(titlelist) '. ';
+}
+.section_setup h3::after/*pseudo-clase que pone un elemento despues (en este caso despues de h1)en html*/{
+    content: '';/*contiene un valor aunque sea vacio, recuerda*/
+    display: inline-block;
+    width: 80px;
+    height: 4px;
+    background: var(--gray30);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.section_setup ol li{
+    line-height: 24px;
+}
+.section_setup ul li{
+    margin-top: 16px;
+}

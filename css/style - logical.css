@@ -1,0 +1,276 @@
+/* .title (selector){ 
+    color(propiedad): aqua(valor);
+} */
+/* .title, .name (selectores){
+    color: aqua;
+    font-size(n propiedades): 15px;
+} */
+/*width: 50vw; vw: area visible del navegdor, osea que se encaje y se que asi mientras que la pagina sea de diferentes formas.*/
+@font-face{/*para guardar o poner fonts personalisadas*/
+    font-family:Charter;
+    src:url(fonts/charter-regular.otf);
+    font-style:normal;
+    font-weight:400;/*de 100 a 300 delgado, 400 a 600 normal y 700 a mas bold*/
+}
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-italic.otf);
+    font-style:italic;
+    font-weight:400;
+}
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-bold.otf);
+    font-style:normal;
+    font-weight:bold;
+} 
+@font-face{
+    font-family:Charter;
+    src:url(fonts/charter-bold-italic.otf);
+    font-style:italic;
+    font-weight:bold;
+}     
+:root{/*elemento raíz de un árbol que representa el documento. En HTML y tambien guardar elementos y re usarlos.*/
+    --white30: white;
+    --white20: #A5A3A5;
+    --white10: #3A3539;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--white30);
+    font-family: 'Nunito', sans-serif;
+    background: #251F24;
+    margin: 0;
+    /* margin: 10px 10px 10px 10px; */
+    /* margin-inline: 100px; */
+    /* margin-block: 100px; */
+    /* font-family:Charter;  */
+}
+a{
+    color:var(--white30) ;
+}
+/*para que la pagina se ajuste al tamaño que le des*/
+.header{
+    /* position: sticky;
+    inset-block-start: -60px; */
+}
+.header-content{
+    padding-inline:20px;
+    /* position: relative;
+    inset-block-start: 80px; */
+}
+header{
+    margin-block-start: 20px;
+    font-size: 14px;
+    color: var(--white30);
+    /* position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -208px;
+    inline-size: 188px; */
+}
+header li{
+    color: var(--white20);
+    margin-block-end: 16px;
+}
+nav details summary{
+    font-weight: bold;
+}
+header a{
+    color: var(--white20);
+    text-decoration: none;
+}
+header a:hover {
+    color: var(--white30);
+}
+
+/* h1, h2, h3{
+    font-weight: normal;
+} */
+h1{
+    font-size: 40px;
+    margin-block-start: 20px;
+    margin-block-end: 16px;
+    /* margin: 64px 10px 16px; */
+    /*top right/left bottom , pero el original es top right bottom left */
+}
+
+hr{
+    color: var(--white10);
+    border: 1px solid #61616133;
+}
+h2{
+    font-size: 40px;
+    margin-block: 40px;
+}
+h3{
+    font-size: 24px;
+    font-weight: 600px;
+    margin-block: 16px;
+    /* margin: 16px 0px 24px; */
+}
+pre{
+    background-color: var(--white10);
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8 px;
+    /*esta parte es de muestra: de como hacer bordes decorativos*/
+    /* border-radius: 8px;
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    margin-block-end: 30px;
+    border-start-start-radius:60px ; */
+}
+p{
+    color: var(--white20);
+}
+p a{
+    color: #26A0DA;
+}
+blockquote{
+    background: var(--white10);
+    border-radius: 8px;
+    line-height: 32px;
+    font-size: 24px;
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+}
+blockquote p{
+    color: var(--white30);
+}
+.hero{
+    background: linear-gradient(96.07deg/*grados*/, #314755 30.63%, #26A0DA 102.18%);
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; hace que se expanda a imagen para que no pierda la proporcion */
+    block-size: 50px;
+}
+.section_setup img{
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+}
+.section_setup{
+    counter-reset: titlelist;/*esta propiedad le da un numerado a tu lista que quieras enumarar numero, n.romanos, etc. Pero tiene un limite cuando hay un div, section, header, article, etc.*/
+}
+/* .section_setup img{
+    margin-top: 40px;
+} */
+.section_setup h3{
+    counter-increment: titlelist;
+}
+.section_setup h3::before/*pseudo-clase que pone un elemento antes (en este caso despues de h1)en html*/{
+    content: counter(titlelist) '. ';
+}
+/* .section_setup h3::after{
+    pseudo-clase que pone un elemento despues (en este caso despues de h1)en html
+    content: '';/*contiene un valor aunque sea vacio, recuerda
+    display: inline-block;
+    width: 32px;
+    height: 4px;
+    background: var(--white30);
+}*/
+.section_setup h3{
+    margin-top: 40px;
+}
+.section_setup ol li{
+    line-height: 24px;
+}
+.section_setup ul li{
+    margin-top: 16px;
+}
+
+/* main{
+    border: 1px solid red;
+} */
+.wrapper{
+    /* border: 1px solid yellow; */
+    max-inline-size: 902px;
+    /* block-size: 100px; */
+    margin: auto;
+}
+.main-content{
+    padding: 16px;
+    /* border: 1px solid blue; */
+}
+/* .slider{
+    border: 1px solid red;
+} */
+.slider-container{
+    /* block-size: 100px; */
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    white-space: nowrap;/*que es te caso es especial, para que el bloque no vaya abajo sino al lado nuestro*/
+    /* border: 1px solid purple; */
+}
+.video{
+    margin: 0;
+    /* border: 1px solid blue; */
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+.slider-bullet-list{
+    /* border: 1px solid yellow; */
+    text-align: center;
+    margin-block-start: 10px;
+}
+.slider-bullet{
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    background: white;
+    border-radius: 50%;
+}
+.form input{
+    inline-size: 100%;
+    border: 1px solid var(--white30);
+    background: #251F24;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding-inline:16px;
+    padding-block: 12px;
+    color: var(--white30);
+    font-size: 16px;
+    display: block;
+    margin-block-end: 24px;
+}
+.form input[type="submit"]{
+    background: #157EFB;
+    border: none;
+}
+.form ::-webkit-input-placeholder{
+    color: var(--white20);
+}
+@media screen and (min-width:1366px) {
+    .hero{
+        block-size:350px;
+    }
+    header{
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: -208px;
+        inline-size: 188px;
+    }
+    .header{
+        position: sticky;
+        inset-block-start: -60px;
+    }
+    .header-content{
+        position: relative;
+        inset-block-start: 80px;
+        padding-inline: 0;
+    }
+    h1{
+        font-size: 60px;
+        margin-block-start: 64px;
+    }
+}
