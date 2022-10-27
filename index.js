@@ -32,7 +32,6 @@ function handlePause(){
 }
 
 
-
 const $progress = document.querySelector('.progress')
 $video.addEventListener('loadedmetadata', handleLoaded);
 $video.addEventListener('timeupdate', handleTimeUpdate);
